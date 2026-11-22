@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "Dropshipping": {
+      "source": "clawic/skills",
+      "commit": "f825206afbf1c697202533a9187be68c7b697e0e",
+      "sourceType": "github",
+      "skillPath": "skills/dropshipping/SKILL.md",
+      "computedHash": "2f1f3efd3ddd397bf6fa340c2f35710a018fdf62e5a616bcc5250d6c5c94e519"
+    }
+  }
+}
