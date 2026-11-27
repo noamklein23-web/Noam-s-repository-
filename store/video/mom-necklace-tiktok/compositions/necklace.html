@@ -1,0 +1,60 @@
+<template>
+  <style>
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    #root { position: absolute; inset: 0; }
+    .col { position: absolute; left: 120px; width: 660px; text-align: center; direction: rtl; }
+    .gold { background-image: linear-gradient(180deg, #f8e3a1 0%, #d9a743 52%, #a8761c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #root { background: #1e1410; }
+    #neck-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #neck-word { top: 760px; font: 400 230px/1 'Suez One'; }
+    #neck-shine {
+      background-image:
+        linear-gradient(100deg, rgba(255,255,255,0) 42%, rgba(255,250,235,0.95) 50%, rgba(255,255,255,0) 58%),
+        linear-gradient(180deg, #f8e3a1 0%, #d9a743 52%, #a8761c 100%);
+      background-size: 300% 100%, 100% 100%;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    #neck-cap1 { top: 1050px; font: 900 70px/1 'Heebo'; color: #fff6e8; }
+    #neck-cap2 { top: 1140px; font: 800 50px/1.1 'Heebo'; color: #cdb89a; }
+    #neck-note { top: 1216px; font: 400 28px/1 'Heebo'; color: #8a7a6a; }
+    #neck-cap1, #neck-cap2, #neck-note { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="necklace" data-width="1080" data-height="1920">
+    <div id="neck-clip" class="clip" data-start="0" data-duration="4">
+      <div id="neck-inner">
+        <svg id="neck-svg" viewBox="0 0 1080 1920" data-layout-ignore>
+          <defs>
+            <mask id="neck-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1920">
+              <path id="neck-mask-l" d="M 150 300 C 170 620, 220 760, 262 838" pathLength="1" stroke="#fff" stroke-width="40" fill="none" stroke-dasharray="1 1" />
+              <path id="neck-mask-r" d="M 750 300 C 730 620, 680 760, 638 838" pathLength="1" stroke="#fff" stroke-width="40" fill="none" stroke-dasharray="1 1" />
+            </mask>
+          </defs>
+          <g mask="url(#neck-mask)" stroke="#d9a743" stroke-width="8" stroke-linecap="round" fill="none">
+            <path d="M 150 300 C 170 620, 220 760, 262 838" stroke-dasharray="2 14" />
+            <path d="M 750 300 C 730 620, 680 760, 638 838" stroke-dasharray="2 14" />
+            <circle id="neck-ring-l" cx="262" cy="838" r="10" stroke-width="5" />
+            <circle id="neck-ring-r" cx="638" cy="838" r="10" stroke-width="5" />
+          </g>
+        </svg>
+        <div id="neck-word" class="col"><span id="neck-shine">אמא</span></div>
+        <div id="neck-cap1" class="col">שרשרת שם בעברית</div>
+        <div id="neck-cap2" class="col">השם שלה או של הילדים</div>
+        <div id="neck-note" class="col">הדמיה</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#neck-mask-l, #neck-mask-r", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, 0.05);
+    tl.fromTo("#neck-shine", { backgroundPosition: "130% 0, 0 0" }, { backgroundPosition: "-30% 0, 0 0", duration: 0.75, ease: "power2.inOut" }, 0.85);
+    tl.fromTo("#neck-cap1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 1.25);
+    tl.fromTo("#neck-cap2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 1.6);
+    tl.fromTo("#neck-note", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 1.6);
+    tl.to("#neck-inner", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 3.78);
+    window.__timelines["necklace"] = tl;
+  </script>
+</template>

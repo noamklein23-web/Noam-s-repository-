@@ -1,0 +1,41 @@
+<template>
+  <style>
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    #root { position: absolute; inset: 0; }
+    .col { position: absolute; left: 120px; width: 660px; text-align: center; direction: rtl; }
+    .gold { background-image: linear-gradient(180deg, #f8e3a1 0%, #d9a743 52%, #a8761c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #root { background: #1e1410; }
+    #names-us { top: 470px; font: 900 150px/1 'Heebo'; color: #fff6e8; }
+    .names-kid { font: 400 124px/1.05 'Suez One'; opacity: 0; }
+    #names-k1 { top: 720px; }
+    #names-k2 { top: 880px; }
+    #names-k3 { top: 1040px; }
+    #names-mom { top: 760px; font: 400 230px/1 'Suez One'; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="names" data-width="1080" data-height="1920">
+    <div id="names-clip" class="clip" data-start="0" data-duration="3.6">
+      <div id="names-us" class="col">אנחנו.</div>
+      <div id="names-k1" class="col names-kid"><span class="gold">נועה</span></div>
+      <div id="names-k2" class="col names-kid"><span class="gold">איתי</span></div>
+      <div id="names-k3" class="col names-kid"><span class="gold">תום</span></div>
+      <div id="names-mom" class="col"><span class="gold">אמא</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#names-us", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.1);
+    ["#names-k1", "#names-k2", "#names-k3"].forEach((id, i) => {
+      tl.fromTo(id, { opacity: 0, y: 40, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" }, 0.75 + i * 0.25);
+    });
+    // the three names gather into one word
+    tl.to("#names-us", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 2.1);
+    tl.to("#names-k1", { y: 150, scale: 0.5, opacity: 0, filter: "blur(12px)", duration: 0.4, ease: "power3.in" }, 2.15);
+    tl.to("#names-k2", { scale: 0.5, opacity: 0, filter: "blur(12px)", duration: 0.4, ease: "power3.in" }, 2.15);
+    tl.to("#names-k3", { y: -150, scale: 0.5, opacity: 0, filter: "blur(12px)", duration: 0.4, ease: "power3.in" }, 2.15);
+    tl.fromTo("#names-mom", { opacity: 0, scale: 1.18, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 2.45);
+    window.__timelines["names"] = tl;
+  </script>
+</template>

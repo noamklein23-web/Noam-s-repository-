@@ -1,0 +1,43 @@
+<template>
+  <style>
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    #root { position: absolute; inset: 0; }
+    .col { position: absolute; left: 120px; width: 660px; text-align: center; direction: rtl; }
+    .gold { background-image: linear-gradient(180deg, #f8e3a1 0%, #d9a743 52%, #a8761c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #root { background: #f7f0e6; }
+    .gift-card { top: 650px; opacity: 0; }
+    .gift-word { position: relative; display: inline-block; font: 400 184px/1.05 'Suez One'; color: #2a1e17; padding: 0 12px; }
+    .gift-strike { position: absolute; left: -18px; right: -18px; top: 50%; height: 18px; margin-top: -9px; background: #c8452e; border-radius: 9px; transform-origin: 100% 50%; }
+    .gift-sub { margin-top: 34px; font: 800 62px/1.15 'Heebo'; color: #8c7b6e; }
+  </style>
+  <div id="root" data-composition-id="gifts" data-width="1080" data-height="1920">
+    <div id="gifts-clip" class="clip" data-start="0" data-duration="6.5">
+      <div id="gift-1" class="col gift-card">
+        <div class="gift-word">בושם<span id="gift-1-strike" class="gift-strike"></span></div>
+        <div id="gift-1-sub" class="gift-sub">יש לה כבר 4</div>
+      </div>
+      <div id="gift-2" class="col gift-card">
+        <div class="gift-word">פרחים<span id="gift-2-strike" class="gift-strike"></span></div>
+        <div id="gift-2-sub" class="gift-sub">נובלים תוך שבוע</div>
+      </div>
+      <div id="gift-3" class="col gift-card">
+        <div class="gift-word">עוד ספל<span id="gift-3-strike" class="gift-strike"></span></div>
+        <div id="gift-3-sub" class="gift-sub">יש לה מגירה שלמה</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    [1, 2, 3].forEach((i) => {
+      const t = (i - 1) * 2.15;
+      tl.fromTo(`#gift-${i}`, { opacity: 0, y: 150, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, t);
+      tl.fromTo(`#gift-${i}-strike`, { scaleX: 0, rotation: -4 }, { scaleX: 1, rotation: -4, duration: 0.22, ease: "power3.out" }, t + 0.5);
+      tl.fromTo(`#gift-${i}-sub`, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, t + 0.65);
+      tl.to(`#gift-${i}`, { opacity: 0, y: -160, filter: "blur(12px)", duration: 0.2, ease: "power3.in" }, t + 2.0);
+    });
+    window.__timelines["gifts"] = tl;
+  </script>
+</template>

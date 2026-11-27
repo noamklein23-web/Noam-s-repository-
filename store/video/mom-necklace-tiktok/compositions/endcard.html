@@ -1,0 +1,52 @@
+<template>
+  <style>
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Heebo'; font-weight: 100 900; font-display: block; src: url('assets/fonts/heebo-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-hebrew.woff2') format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+    @font-face { font-family: 'Suez One'; font-weight: 400; font-display: block; src: url('assets/fonts/suez-latin.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2011-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD; }
+    #root { position: absolute; inset: 0; }
+    .col { position: absolute; left: 120px; width: 660px; text-align: center; direction: rtl; }
+    .gold { background-image: linear-gradient(180deg, #f8e3a1 0%, #d9a743 52%, #a8761c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #root { background: #1e1410; }
+    #end-l1 { top: 420px; font: 800 60px/1 'Heebo'; color: #fff6e8; }
+    #end-q { top: 506px; font: 400 76px/1.1 'Suez One'; color: #b9a58c; }
+    #end-q-text { position: relative; display: inline-block; padding: 0 10px; }
+    #end-strike { position: absolute; left: -10px; right: -10px; top: 50%; height: 12px; margin-top: -6px; background: #c8452e; border-radius: 6px; transform-origin: 100% 50%; }
+    #end-l2 { top: 666px; font: 800 64px/1 'Heebo'; color: #fff6e8; }
+    #end-pay { top: 752px; font: 400 128px/1.1 'Suez One'; }
+    #end-chips { top: 966px; display: flex; flex-wrap: nowrap; justify-content: center; gap: 10px; }
+    .end-chip { font: 800 30px/1 'Heebo'; color: #e9d9bd; border: 2px solid #5a4636; border-radius: 999px; padding: 10px 14px; opacity: 0; }
+    #end-cta { top: 1060px; }
+    #end-cta-pill { display: inline-block; font: 900 50px/1 'Heebo'; color: #1e1410; background: linear-gradient(180deg, #f8e3a1, #d9a743); border-radius: 999px; padding: 22px 40px; }
+    #end-brand { top: 1170px; font: 400 58px/1 'Suez One'; }
+    #end-l1 span, #end-l2 span { display: inline-block; margin: 0 8px; }
+    #end-l1 span, #end-l2 span, #end-q, #end-pay, #end-cta, #end-brand { opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="end-clip" class="clip" data-start="0" data-duration="5.7">
+      <div id="end-l1" class="col"><span>השנה,</span><span>במקום</span></div>
+      <div id="end-q" class="col"><span id="end-q-text">״אני לא צריכה כלום״<span id="end-strike"></span></span></div>
+      <div id="end-l2" class="col"><span>היא</span><span>תשאל</span></div>
+      <div id="end-pay" class="col"><span class="gold">״איפה מצאת?!״</span></div>
+      <div id="end-chips" class="col">
+        <span class="end-chip">חריטה בעברית</span>
+        <span class="end-chip">משלוח חינם</span>
+        <span class="end-chip">אריזת מתנה</span>
+      </div>
+      <div id="end-cta" class="col"><span id="end-cta-pill">להזמנה – הקישור בביו</span></div>
+      <div id="end-brand" class="col"><span class="gold">שלנו</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#end-l1 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power4.out" }, 0.1);
+    tl.fromTo("#end-q", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.35);
+    tl.fromTo("#end-strike", { scaleX: 0, rotation: -3 }, { scaleX: 1, rotation: -3, duration: 0.22, ease: "power3.out" }, 1.15);
+    tl.fromTo("#end-l2 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power4.out" }, 1.5);
+    tl.fromTo("#end-pay", { opacity: 0, scale: 1.14, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 1.95);
+    tl.fromTo(".end-chip", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.08, ease: "power4.out" }, 2.95);
+    tl.fromTo("#end-cta", { opacity: 0, clipPath: "inset(0 0 0 100%)" }, { opacity: 1, clipPath: "inset(0 0 0 0%)", duration: 0.35, ease: "power3.out" }, 3.3);
+    tl.fromTo("#end-brand", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 3.45);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>
