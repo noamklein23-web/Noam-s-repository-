@@ -13,7 +13,7 @@
     #end-q-text { position: relative; display: inline-block; padding: 0 10px; }
     #end-strike { position: absolute; left: -10px; right: -10px; top: 50%; height: 12px; margin-top: -6px; background: #c8452e; border-radius: 6px; transform-origin: 100% 50%; }
     #end-l2 { top: 666px; font: 800 64px/1 'Heebo'; color: #fff6e8; }
-    #end-pay { top: 752px; font: 400 128px/1.1 'Suez One'; }
+    #end-pay { top: 770px; font: 400 96px/1.1 'Suez One'; white-space: nowrap; }
     #end-chips { top: 966px; display: flex; flex-wrap: nowrap; justify-content: center; gap: 10px; }
     .end-chip { font: 800 30px/1 'Heebo'; color: #e9d9bd; border: 2px solid #5a4636; border-radius: 999px; padding: 10px 14px; opacity: 0; }
     #end-cta { top: 1060px; }
@@ -23,7 +23,7 @@
     #end-l1 span, #end-l2 span, #end-q, #end-pay, #end-cta, #end-brand { opacity: 0; }
   </style>
   <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
-    <div id="end-clip" class="clip" data-start="0" data-duration="5.7">
+    <div id="end-clip" class="clip" data-start="0" data-duration="9.3">
       <div id="end-l1" class="col"><span>השנה,</span><span>במקום</span></div>
       <div id="end-q" class="col"><span id="end-q-text">״אני לא צריכה כלום״<span id="end-strike"></span></span></div>
       <div id="end-l2" class="col"><span>היא</span><span>תשאל</span></div>
@@ -40,13 +40,13 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#end-l1 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power4.out" }, 0.1);
-    tl.fromTo("#end-q", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.35);
-    tl.fromTo("#end-strike", { scaleX: 0, rotation: -3 }, { scaleX: 1, rotation: -3, duration: 0.22, ease: "power3.out" }, 1.15);
-    tl.fromTo("#end-l2 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power4.out" }, 1.5);
-    tl.fromTo("#end-pay", { opacity: 0, scale: 1.14, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 1.95);
-    tl.fromTo(".end-chip", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.08, ease: "power4.out" }, 2.95);
-    tl.fromTo("#end-cta", { opacity: 0, clipPath: "inset(0 0 0 100%)" }, { opacity: 1, clipPath: "inset(0 0 0 0%)", duration: 0.35, ease: "power3.out" }, 3.3);
-    tl.fromTo("#end-brand", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 3.45);
+    tl.fromTo("#end-q", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0.75);
+    tl.fromTo("#end-strike", { scaleX: 0, rotation: -3 }, { scaleX: 1, rotation: -3, duration: 0.22, ease: "power3.out" }, 2.0);
+    tl.fromTo("#end-l2 span", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.09, ease: "power4.out" }, 2.45);
+    tl.fromTo("#end-pay", { opacity: 0, scale: 1.14, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, 3.55);
+    tl.fromTo(".end-chip", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.08, ease: "power4.out" }, 4.5);
+    tl.fromTo("#end-cta", { opacity: 0, clipPath: "inset(0 0 0 100%)" }, { opacity: 1, clipPath: "inset(0 0 0 0%)", duration: 0.35, ease: "power3.out" }, 6.85);
+    tl.fromTo("#end-brand", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 7.15);
     window.__timelines["endcard"] = tl;
   </script>
 </template>

@@ -14,7 +14,7 @@
     .gift-sub { margin-top: 34px; font: 800 62px/1.15 'Heebo'; color: #8c7b6e; }
   </style>
   <div id="root" data-composition-id="gifts" data-width="1080" data-height="1920">
-    <div id="gifts-clip" class="clip" data-start="0" data-duration="6.5">
+    <div id="gifts-clip" class="clip" data-start="0" data-duration="7.7">
       <div id="gift-1" class="col gift-card">
         <div class="gift-word">בושם<span id="gift-1-strike" class="gift-strike"></span></div>
         <div id="gift-1-sub" class="gift-sub">יש לה כבר 4</div>
@@ -32,11 +32,11 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     [1, 2, 3].forEach((i) => {
-      const t = (i - 1) * 2.15;
+      const t = [0, 2.5, 4.9][i - 1], s = [1.09, 3.4, 5.85][i - 1], o = [2.35, 4.75, 7.45][i - 1];
       tl.fromTo(`#gift-${i}`, { opacity: 0, y: 150, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, t);
-      tl.fromTo(`#gift-${i}-strike`, { scaleX: 0, rotation: -4 }, { scaleX: 1, rotation: -4, duration: 0.22, ease: "power3.out" }, t + 0.5);
-      tl.fromTo(`#gift-${i}-sub`, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, t + 0.65);
-      tl.to(`#gift-${i}`, { opacity: 0, y: -160, filter: "blur(12px)", duration: 0.2, ease: "power3.in" }, t + 2.0);
+      tl.fromTo(`#gift-${i}-strike`, { scaleX: 0, rotation: -4 }, { scaleX: 1, rotation: -4, duration: 0.22, ease: "power3.out" }, s - 0.12);
+      tl.fromTo(`#gift-${i}-sub`, { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, s);
+      tl.to(`#gift-${i}`, { opacity: 0, y: -160, filter: "blur(12px)", duration: 0.2, ease: "power3.in" }, o);
     });
     window.__timelines["gifts"] = tl;
   </script>

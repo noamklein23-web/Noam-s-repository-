@@ -24,7 +24,7 @@
     #neck-cap1, #neck-cap2, #neck-note { opacity: 0; }
   </style>
   <div id="root" data-composition-id="necklace" data-width="1080" data-height="1920">
-    <div id="neck-clip" class="clip" data-start="0" data-duration="4">
+    <div id="neck-clip" class="clip" data-start="0" data-duration="5">
       <div id="neck-inner">
         <svg id="neck-svg" viewBox="0 0 1080 1920" data-layout-ignore>
           <defs>
@@ -51,10 +51,10 @@
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#neck-mask-l, #neck-mask-r", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, 0.05);
     tl.fromTo("#neck-shine", { backgroundPosition: "130% 0, 0 0" }, { backgroundPosition: "-30% 0, 0 0", duration: 0.75, ease: "power2.inOut" }, 0.85);
-    tl.fromTo("#neck-cap1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 1.25);
-    tl.fromTo("#neck-cap2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 1.6);
-    tl.fromTo("#neck-note", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 1.6);
-    tl.to("#neck-inner", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 3.78);
+    tl.fromTo("#neck-cap1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 1.15);
+    tl.fromTo("#neck-cap2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 2.74);
+    tl.fromTo("#neck-note", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 1.15);
+    tl.to("#neck-inner", { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power3.in" }, 4.78);
     window.__timelines["necklace"] = tl;
   </script>
 </template>
