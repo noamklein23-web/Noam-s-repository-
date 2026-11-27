@@ -7,6 +7,13 @@
       "sourceType": "github",
       "skillPath": "skills/dropshipping/SKILL.md",
       "computedHash": "2f1f3efd3ddd397bf6fa340c2f35710a018fdf62e5a616bcc5250d6c5c94e519"
+    },
+    "add-voiceover": {
+      "source": "jamdotdev/jam-plugin",
+      "commit": "1e3c3dd7827ba8c7da20ca4a9c4c72c22eca0d54",
+      "sourceType": "github",
+      "skillPath": "skills/add-voiceover/SKILL.md",
+      "computedHash": "db447ad84467f44ba23c5d514da1380f089e2e1eb3e6c41167d7282e61905ebe"
     }
   }
 }
