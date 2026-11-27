@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>שרשרת שמות בעברית | שרשרת אמא עם שמות הילדים</title>
+<meta name="description" content="שרשרת אישית עם שמות הילדים בעברית – מתנה מושלמת ליום המשפחה, ליום הולדת ולאמא טרייה. חריטה אישית, אריזת מתנה ומשלוח חינם.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Suez+One&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+  :root {
+    --bg: #fbf7f1;
+    --surface: #ffffff;
+    --ink: #2b2420;
+    --muted: #7a6e66;
+    --line: #eadfce;
+    --accent: #b0802b;
+    --accent-dark: #8a6220;
+    --accent-soft: #f6ecd9;
+    --danger: #b3261e;
+    --ok: #2e7d4f;
+    --radius: 16px;
+    --gold: linear-gradient(180deg, #f6dd94 0%, #d4a23c 45%, #a8761c 100%);
+    --silver: linear-gradient(180deg, #ffffff 0%, #c9ced4 45%, #8c939b 100%);
+    --rose: linear-gradient(180deg, #ffd9cc 0%, #e0a08a 45%, #b56d58 100%);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: 'Heebo', system-ui, sans-serif; font-size: 17px; line-height: 1.6;
+  }
+  a { color: var(--accent-dark); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 10; background: rgba(251,247,241,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-family: 'Suez One', serif; font-size: 26px; color: var(--accent-dark); text-decoration: none; }
+  .header-cta { background: var(--ink); color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 700; font-size: 15px; }
+
+  /* hero */
+  .hero { padding: 40px 0 24px; display: grid; gap: 32px; align-items: center; }
+  @media (min-width: 860px) { .hero { grid-template-columns: 1.05fr 1fr; padding: 64px 0 40px; } }
+  .eyebrow { display: inline-block; background: var(--accent-soft); color: var(--accent-dark); font-weight: 700; font-size: 14px; padding: 4px 12px; border-radius: 999px; }
+  h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.15; margin: 14px 0 12px; font-weight: 800; }
+  .lead { color: var(--muted); font-size: 19px; margin: 0 0 22px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--accent); color: #fff; border: 0; border-radius: 999px;
+    padding: 15px 30px; font: inherit; font-weight: 800; font-size: 18px; cursor: pointer; text-decoration: none;
+    box-shadow: 0 6px 18px rgba(176,128,43,.3); transition: background .15s, transform .15s;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn:active { transform: translateY(1px); }
+  .btn[disabled] { opacity: .6; cursor: wait; }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: var(--muted); font-size: 15px; padding: 0; list-style: none; }
+  .badges li::before { content: '✓'; color: var(--accent); font-weight: 800; margin-left: 6px; }
+
+  /* pendant preview */
+  .preview {
+    background: radial-gradient(120% 90% at 50% 0%, #fff 0%, #f3eadc 70%);
+    border: 1px solid var(--line); border-radius: 24px; padding: 28px 16px 36px; text-align: center; position: relative; overflow: hidden;
+  }
+  .chain { width: 82%; height: 90px; margin: 0 auto -4px; border: 3px dotted #c9a45a; border-top: 0; border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+  .preview[data-color="silver"] .chain { border-color: #a9b0b8; }
+  .preview[data-color="rose"] .chain { border-color: #cf8e78; }
+  .pendant {
+    font-family: 'Suez One', serif; font-size: clamp(30px, 8vw, 46px); line-height: 1.25;
+    background: var(--gold); -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.18)); padding: 4px 8px; min-height: 1.3em; word-break: break-word;
+  }
+  .preview[data-color="silver"] .pendant { background-image: var(--silver); }
+  .preview[data-color="rose"] .pendant { background-image: var(--rose); }
+  .pendant .sep { font-size: .55em; vertical-align: middle; margin: 0 .2em; }
+  .preview-note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+
+  /* sections */
+  section { padding: 36px 0; }
+  h2 { font-size: clamp(24px, 4.5vw, 32px); margin: 0 0 18px; font-weight: 800; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 18px; }
+  @media (min-width: 600px) { .card { padding: 28px; } }
+
+  /* order form */
+  .order-grid { display: grid; gap: 24px; }
+  @media (max-width: 859px) {
+    .order-grid #livePreview { order: -1; position: sticky; top: 60px; z-index: 5; padding: 6px 12px 10px; border-radius: 0 0 18px 18px; margin: 0 -16px; box-shadow: 0 6px 14px rgba(43,36,32,.08); }
+    .order-grid #livePreview .chain { height: 34px; width: 60%; }
+    .order-grid #livePreview .pendant { font-size: 30px; }
+    .order-grid #livePreview .preview-note { display: none; }
+  }
+  @media (min-width: 860px) { .order-grid { grid-template-columns: 1.25fr 1fr; align-items: start; } .order-grid .preview { position: sticky; top: 84px; } }
+  fieldset { border: 0; margin: 0 0 22px; padding: 0; }
+  legend, .label { font-weight: 700; margin-bottom: 10px; display: block; padding: 0; }
+  .hint { color: var(--muted); font-size: 14px; font-weight: 400; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .opt { position: relative; }
+  .opt input { position: absolute; opacity: 0; inset: 0; }
+  .opt span {
+    display: block; border: 2px solid var(--line); border-radius: 12px; padding: 12px; text-align: center; cursor: pointer; background: #fff;
+    transition: border-color .15s, background .15s;
+  }
+  .opt span b { display: block; font-size: 17px; }
+  .opt span small { color: var(--muted); font-size: 15px; }
+  .opt input:checked + span { border-color: var(--accent); background: var(--accent-soft); }
+  .opt input:focus-visible + span { outline: 3px solid #e7c98d; outline-offset: 2px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch span { display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; }
+  .swatch i { width: 22px; height: 22px; border-radius: 50%; display: inline-block; border: 1px solid rgba(0,0,0,.15); }
+  .names { display: grid; gap: 10px; }
+  .name-row { display: flex; gap: 8px; }
+  input[type=text], input[type=tel], input[type=email], select, textarea {
+    width: 100%; font: inherit; font-size: 17px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink);
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  textarea { min-height: 76px; resize: vertical; }
+  .icon-btn { flex: 0 0 auto; border: 1.5px solid var(--line); background: #fff; border-radius: 10px; width: 48px; font-size: 22px; cursor: pointer; color: var(--muted); }
+  .link-btn { background: none; border: 0; color: var(--accent-dark); font: inherit; font-weight: 700; cursor: pointer; padding: 4px 0; text-align: start; }
+  .two { display: grid; gap: 10px; }
+  @media (min-width: 520px) { .two { grid-template-columns: 1fr 1fr; } }
+  .check { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; }
+  .check input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); flex: 0 0 auto; }
+  .total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed var(--line); padding-top: 16px; margin: 8px 0 16px; }
+  .total b { font-size: 28px; }
+  .error { color: var(--danger); font-size: 15px; font-weight: 500; min-height: 1.2em; margin: 0 0 10px; }
+  .form-submit .btn { width: 100%; }
+  .secure { text-align: center; color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* steps, faq */
+  .steps { display: grid; gap: 14px; counter-reset: s; padding: 0; list-style: none; margin: 0; }
+  @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .steps li { counter-increment: s; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .steps li::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-dark); font-weight: 800; margin-bottom: 8px; }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 14px 18px; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; color: var(--accent); font-size: 22px; line-height: 1; }
+  details[open] summary::after { content: '–'; }
+  details > div { padding: 0 18px 16px; color: #4a413b; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 100px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: grid; gap: 6px; }
+
+  .wa-float {
+    position: fixed; left: 16px; bottom: 16px; z-index: 20; width: 56px; height: 56px; border-radius: 50%;
+    background: #25d366; display: grid; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.2);
+  }
+  .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+  /* overlay */
+  .overlay { position: fixed; inset: 0; background: rgba(43,36,32,.55); display: none; place-items: center; z-index: 50; padding: 16px; }
+  .overlay.show { display: grid; }
+  .overlay .card { max-width: 420px; width: 100%; text-align: center; }
+  .spinner { width: 40px; height: 40px; border-radius: 50%; border: 4px solid var(--accent-soft); border-top-color: var(--accent); animation: spin 0.9s linear infinite; margin: 8px auto 14px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .demo-banner { background: #fff3cd; color: #6b5200; text-align: center; font-size: 14px; padding: 6px 16px; display: none; }
+  .demo-banner.show { display: block; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+
+<div class="demo-banner" id="demoBanner">מצב הדגמה: ההזמנות לא נשמרות ולא נשלחות. כדי להפעיל, מלאו את appsScriptUrl ב-config.js.</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#" data-store-name>שלנו</a>
+    <a class="header-cta" href="#order">להזמנה</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">מתנה ליום המשפחה, ליום הולדת ולאמא טרייה</span>
+      <h1>כל השמות שהכי חשובים לך – על שרשרת אחת</h1>
+      <p class="lead">שרשרת עדינה עם שמות הילדים, בני הזוג או המשפחה – בעברית, בחריטה אישית, באריזת מתנה מוכנה להענקה.</p>
+      <a class="btn" href="#order">לעיצוב השרשרת שלך ←</a>
+      <ul class="badges">
+        <li>חריטה אישית בעברית</li>
+        <li>משלוח חינם עד הבית</li>
+        <li>אריזת מתנה</li>
+        <li>נבדק לפני ייצור</li>
+      </ul>
+    </div>
+    <div class="preview" data-color="gold" aria-hidden="true">
+      <div class="chain"></div>
+      <div class="pendant" id="heroPendant">נועה <span class="sep">♥</span> איתי</div>
+      <p class="preview-note">הדמיה בלבד</p>
+    </div>
+  </div>
+
+  <section id="order">
+    <div class="wrap">
+      <h2>עצבו את השרשרת שלכם</h2>
+      <div class="order-grid">
+        <form class="card" id="orderForm" novalidate>
+
+          <fieldset>
+            <legend>כמה שמות?</legend>
+            <div class="options">
+              <label class="opt"><input type="radio" name="variant" value="single" checked><span><b>שם אחד</b><small data-price="single">₪139</small></span></label>
+              <label class="opt"><input type="radio" name="variant" value="multi"><span><b>2–4 שמות</b><small data-price="multi">₪169</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>השמות לחריטה <span class="hint">· עד 8 אותיות לשם, בעברית או באנגלית</span></legend>
+            <div class="names" id="names"></div>
+            <button type="button" class="link-btn" id="addName" hidden>+ הוספת שם</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>גוון</legend>
+            <div class="swatches">
+              <label class="opt swatch"><input type="radio" name="color" value="gold" checked><span><i style="background:var(--gold)"></i>זהב</span></label>
+              <label class="opt swatch"><input type="radio" name="color" value="silver"><span><i style="background:var(--silver)"></i>כסף</span></label>
+              <label class="opt swatch"><input type="radio" name="color" value="rose"><span><i style="background:var(--rose)"></i>רוז גולד</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <label class="label" for="length">אורך שרשרת</label>
+            <select id="length" name="length">
+              <option value="40">40 ס"מ – צמוד לצוואר</option>
+              <option value="45" selected>45 ס"מ – מומלץ</option>
+              <option value="50">50 ס"מ – ארוך</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <label class="label" for="cardMessage">ברכה לכרטיס <span class="hint">· לא חובה</span></label>
+            <textarea id="cardMessage" name="cardMessage" maxlength="200" dir="auto" placeholder="לאמא הכי טובה בעולם, אוהבים אותך!"></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>פרטים למשלוח</legend>
+            <div class="two">
+              <div><label class="sr-only" for="customerName">שם מלא</label><input type="text" id="customerName" name="customerName" placeholder="שם מלא" autocomplete="name" required></div>
+              <div><label class="sr-only" for="phone">טלפון</label><input type="tel" id="phone" name="phone" placeholder="טלפון" autocomplete="tel" inputmode="tel" required dir="ltr" style="text-align:right"></div>
+              <div><label class="sr-only" for="email">מייל</label><input type="email" id="email" name="email" placeholder="מייל (לאישור הזמנה ומעקב)" autocomplete="email" required dir="ltr" style="text-align:right"></div>
+              <div><label class="sr-only" for="city">עיר</label><input type="text" id="city" name="city" placeholder="עיר" autocomplete="address-level2" required></div>
+              <div><label class="sr-only" for="address">רחוב ומספר בית</label><input type="text" id="address" name="address" placeholder="רחוב, מספר בית ודירה" autocomplete="street-address" required></div>
+              <div><label class="sr-only" for="zip">מיקוד</label><input type="text" id="zip" name="zip" placeholder="מיקוד (לא חובה)" autocomplete="postal-code" inputmode="numeric"></div>
+            </div>
+          </fieldset>
+
+          <label class="check"><input type="checkbox" id="spelling"><span><b>בדקתי את האיות</b> – השמות ייחרטו בדיוק כפי שכתבתי.</span></label>
+          <label class="check"><input type="checkbox" id="terms"><span>קראתי ואני מסכים/ה ל<a href="#policy">מדיניות המשלוחים וההחזרות</a>. כל שרשרת מיוצרת במיוחד עבורי.</span></label>
+
+          <div class="total"><span>סה"כ לתשלום <span class="hint">· כולל משלוח</span></span><b id="total">₪139</b></div>
+          <p class="error" id="formError" role="alert"></p>
+          <div class="form-submit"><button class="btn" type="submit" id="submitBtn">מעבר לתשלום מאובטח ←</button></div>
+          <p class="secure">🔒 התשלום מתבצע בעמוד מאובטח של חברת הסליקה · זמן הכנה ומשלוח: <span data-delivery>7–10 ימי עסקים</span></p>
+        </form>
+
+        <div class="preview" data-color="gold" id="livePreview">
+          <div class="chain"></div>
+          <div class="pendant" id="livePendant">נועה</div>
+          <p class="preview-note">הדמיה של השמות שהקלדתם · התוצאה בפועל לפי עיצוב התליון</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>איך זה עובד?</h2>
+      <ol class="steps">
+        <li><b>מעצבים</b><br>בוחרים שמות, גוון ואורך – ורואים הדמיה.</li>
+        <li><b>אנחנו חורטים</b><br>כל הזמנה נבדקת ונחרטת במיוחד עבורכם.</li>
+        <li><b>מקבלים עד הבית</b><br>באריזת מתנה, עם מספר מעקב במייל.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>שאלות נפוצות</h2>
+      <details><summary>כמה זמן לוקח המשלוח?</summary><div>כל שרשרת מוכנה במיוחד בשבילכם. זמן הכנה ומשלוח: <b data-delivery>7–10 ימי עסקים</b>. תקבלו מספר מעקב במייל ברגע שההזמנה יוצאת.</div></details>
+      <details><summary>אפשר לכתוב באנגלית?</summary><div>כן! פשוט כתבו את השמות באנגלית.</div></details>
+      <details><summary>מה קורה אם יש טעות בחריטה או פגם?</summary><div>מכינים לכם שרשרת חדשה על חשבוננו, או מחזירים את הכסף – מה שתעדיפו. פשוט שלחו לנו תמונה.</div></details>
+      <details><summary>אפשר לבטל הזמנה?</summary><div>אפשר לבטל ללא עלות תוך 24 שעות מההזמנה, לפני שהיא נכנסת לייצור. מכיוון שכל שרשרת נחרטת במיוחד עבורכם, לאחר תחילת הייצור לא ניתן לבטל, למעט במקרה של פגם או טעות שלנו.</div></details>
+      <details><summary>יש עוד שאלה?</summary><div>כתבו לנו <a data-wa href="#">בוואטסאפ</a> או במייל <a data-mail href="#"></a> – נשמח לעזור.</div></details>
+    </div>
+  </section>
+
+  <section id="policy">
+    <div class="wrap">
+      <h2>משלוחים והחזרות</h2>
+      <details><summary>מדיניות משלוחים</summary><div>
+        <p>משלוח חינם לכל הזמנה, לכל הארץ. זמן הכנה ומשלוח: <span data-delivery>7–10 ימי עסקים</span> מרגע ההזמנה. ברגע שההזמנה יוצאת לדרך תקבלו מייל עם מספר מעקב. בתקופות חגים ייתכנו עיכובים של כמה ימים – נעדכן אתכם מראש.</p>
+      </div></details>
+      <details><summary>מדיניות ביטולים והחזרות</summary><div>
+        <p><b>ביטול לפני ייצור:</b> ניתן לבטל ללא עלות תוך 24 שעות ממועד ההזמנה, כל עוד לא נכנסה לייצור. ההחזר יבוצע לאמצעי התשלום המקורי.</p>
+        <p><b>מוצר בהתאמה אישית:</b> כל שרשרת נחרטת לפי השמות שבחרתם ולכן מיוצרת במיוחד עבורכם. לאחר תחילת הייצור לא ניתן לבטל את העסקה או להחזיר את המוצר, אלא במקרה של פגם או טעות מצדנו.</p>
+        <p><b>פגם או טעות בחריטה:</b> שלחו לנו תמונה תוך 14 יום מקבלת המשלוח, ונכין לכם שרשרת חדשה על חשבוננו או נחזיר את מלוא הסכום, לבחירתכם.</p>
+      </div></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b data-store-name>שלנו</b>
+    <span><span data-business-name></span> · עוסק מס' <span data-business-id></span></span>
+    <span>יצירת קשר: <a data-mail href="#"></a> · <a data-wa href="#">וואטסאפ</a></span>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" aria-label="וואטסאפ">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 1 4.1.8.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+  <div class="card">
+    <div class="spinner" id="overlaySpinner"></div>
+    <h3 id="overlayTitle" style="margin:0 0 8px">רגע אחד…</h3>
+    <p id="overlayText" style="margin:0;color:var(--muted)"></p>
+    <button class="btn" id="overlayClose" style="margin-top:16px" hidden>סגירה</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  const S = window.STORE || {};
+  const DEMO = !S.appsScriptUrl;
+  const MAX = { single: 1, multi: 4 };
+  const MIN = { single: 1, multi: 2 };
+  const NAME_RE = /^[א-תa-zA-Z'"׳״\- ]+$/;
+
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const shekel = n => '₪' + n;
+
+  // ---- fill store details from config
+  $$('[data-store-name]').forEach(el => el.textContent = S.name || 'שלנו');
+  $$('[data-delivery]').forEach(el => el.textContent = S.deliveryText || '');
+  $$('[data-business-name]').forEach(el => el.textContent = S.businessName || '');
+  $$('[data-business-id]').forEach(el => el.textContent = S.businessId || '');
+  $$('[data-mail]').forEach(el => { el.href = 'mailto:' + (S.email || ''); if (!el.textContent) el.textContent = S.email || ''; });
+  const waLink = 'https://wa.me/' + (S.whatsapp || '') + '?text=' + encodeURIComponent('היי, יש לי שאלה לגבי שרשרת שמות');
+  $$('[data-wa]').forEach(el => { el.href = waLink; el.target = '_blank'; el.rel = 'noopener'; });
+  if (S.prices) { $('[data-price="single"]').textContent = shekel(S.prices.single); $('[data-price="multi"]').textContent = shekel(S.prices.multi); }
+  if (DEMO) $('#demoBanner').classList.add('show');
+
+  // ---- names inputs
+  const namesBox = $('#names');
+  const addBtn = $('#addName');
+  const variant = () => document.querySelector('input[name=variant]:checked').value;
+
+  function nameInput(value) {
+    const row = document.createElement('div');
+    row.className = 'name-row';
+    const input = document.createElement('input');
+    input.type = 'text'; input.maxLength = 8; input.dir = 'auto'; input.value = value || '';
+    input.placeholder = 'שם'; input.setAttribute('aria-label', 'שם לחריטה');
+    input.addEventListener('input', update);
+    row.appendChild(input);
+    const rm = document.createElement('button');
+    rm.type = 'button'; rm.className = 'icon-btn'; rm.textContent = '×'; rm.setAttribute('aria-label', 'הסרת שם');
+    rm.addEventListener('click', () => { row.remove(); syncNames(); update(); });
+    row.appendChild(rm);
+    return row;
+  }
+
+  function syncNames() {
+    const v = variant();
+    let rows = namesBox.children;
+    while (rows.length < MIN[v]) namesBox.appendChild(nameInput(''));
+    while (rows.length > MAX[v]) namesBox.lastChild.remove();
+    Array.from(rows).forEach(r => r.querySelector('.icon-btn').hidden = rows.length <= MIN[v]);
+    addBtn.hidden = rows.length >= MAX[v];
+    namesBox.querySelectorAll('input').forEach((inp, i) => inp.placeholder = v === 'single' ? 'שם' : 'שם ' + (i + 1));
+  }
+
+  addBtn.addEventListener('click', () => { namesBox.appendChild(nameInput('')); syncNames(); namesBox.lastChild.querySelector('input').focus(); });
+  $$('input[name=variant]').forEach(r => r.addEventListener('change', () => { syncNames(); update(); }));
+  $$('input[name=color]').forEach(r => r.addEventListener('change', update));
+
+  function names() { return $$('#names input').map(i => i.value.trim()).filter(Boolean); }
+
+  function update() {
+    const v = variant();
+    const color = document.querySelector('input[name=color]:checked').value;
+    $('#livePreview').dataset.color = color;
+    const pendant = $('#livePendant');
+    const list = names();
+    pendant.textContent = '';
+    (list.length ? list : [v === 'single' ? 'נועה' : 'נועה', 'איתי'].slice(0, v === 'single' ? 1 : 2)).forEach((n, i) => {
+      if (i) { const s = document.createElement('span'); s.className = 'sep'; s.textContent = '♥'; pendant.appendChild(s); }
+      pendant.appendChild(document.createTextNode(n));
+    });
+    pendant.style.opacity = list.length ? 1 : .45;
+    $('#total').textContent = shekel((S.prices || {})[v] || '');
+  }
+
+  // ---- validation & submit
+  const form = $('#orderForm');
+  const err = $('#formError');
+
+  function validate() {
+    const v = variant();
+    const list = names();
+    if (list.length < MIN[v]) return v === 'single' ? 'נא להקליד את השם לחריטה' : 'נא להקליד לפחות 2 שמות';
+    for (const n of list) if (!NAME_RE.test(n)) return 'השם "' + n + '" מכיל תווים שלא ניתן לחרוט. אפשר אותיות בעברית או באנגלית בלבד.';
+    const req = [['customerName', 'שם מלא'], ['phone', 'טלפון'], ['email', 'מייל'], ['city', 'עיר'], ['address', 'כתובת']];
+    for (const [id, label] of req) if (!$('#' + id).value.trim()) { $('#' + id).focus(); return 'נא למלא ' + label; }
+    if ($('#phone').value.replace(/\D/g, '').length < 9) { $('#phone').focus(); return 'מספר הטלפון לא נראה תקין'; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($('#email').value.trim())) { $('#email').focus(); return 'כתובת המייל לא נראית תקינה'; }
+    if (!$('#spelling').checked) return 'נא לאשר שבדקתם את איות השמות';
+    if (!$('#terms').checked) return 'נא לאשר את מדיניות המשלוחים וההחזרות';
+    return '';
+  }
+
+  function overlay(title, text, { spinner = true, close = false } = {}) {
+    $('#overlayTitle').textContent = title;
+    $('#overlayText').textContent = text;
+    $('#overlaySpinner').hidden = !spinner;
+    $('#overlayClose').hidden = !close;
+    $('#overlay').classList.add('show');
+  }
+  $('#overlayClose').addEventListener('click', () => $('#overlay').classList.remove('show'));
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const problem = validate();
+    err.textContent = problem;
+    if (problem) return;
+
+    const v = variant();
+    const payload = {
+      action: 'create',
+      variant: v,
+      names: names(),
+      color: document.querySelector('input[name=color]:checked').value,
+      length: $('#length').value,
+      cardMessage: $('#cardMessage').value.trim(),
+      customerName: $('#customerName').value.trim(),
+      phone: $('#phone').value.trim(),
+      email: $('#email').value.trim(),
+      city: $('#city').value.trim(),
+      address: $('#address').value.trim(),
+      zip: $('#zip').value.trim(),
+      spellingConfirmed: true,
+    };
+
+    if (DEMO) {
+      overlay('מצב הדגמה', 'ההזמנה תקינה: ' + payload.names.join(' · ') + '. באתר האמיתי הלקוח יעבור עכשיו לעמוד התשלום.', { spinner: false, close: true });
+      return;
+    }
+    const payUrl = (S.paymentLinks || {})[v];
+    if (!payUrl) { err.textContent = 'התשלום עדיין לא הוגדר. נא לפנות אלינו בוואטסאפ.'; return; }
+
+    $('#submitBtn').disabled = true;
+    overlay('שומרים את ההזמנה…', '');
+    try {
+      const res = await fetch(S.appsScriptUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || 'שגיאה');
+      try { localStorage.setItem('pendingOrder', JSON.stringify({ orderId: data.orderId, token: data.token, ts: Date.now() })); } catch (_) {}
+      overlay('מספר הזמנה #' + data.orderId, 'מעבירים אותך לעמוד תשלום מאובטח…');
+      setTimeout(() => { window.location.href = payUrl; }, 1400);
+    } catch (ex) {
+      $('#submitBtn').disabled = false;
+      overlay('משהו השתבש', 'לא הצלחנו לשמור את ההזמנה (' + ex.message + '). נסו שוב, או כתבו לנו בוואטסאפ.', { spinner: false, close: true });
+    }
+  });
+
+  syncNames();
+  update();
+})();
+</script>
+</body>
+</html>
