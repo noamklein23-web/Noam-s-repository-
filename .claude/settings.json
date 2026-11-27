@@ -14,15 +14,22 @@
       "mcp__Gmail__apply_sensitive_message_label"
     ]
   },
+  "enabledPlugins": {
+    "commerce-builder@claude-commerce-agents": true,
+    "hyperframes@hyperframes": true
+  },
   "extraKnownMarketplaces": {
     "claude-commerce-agents": {
       "source": {
         "source": "github",
         "repo": "anthropics/commerce-agents"
       }
+    },
+    "hyperframes": {
+      "source": {
+        "source": "github",
+        "repo": "heygen-com/hyperframes"
+      }
     }
-  },
-  "enabledPlugins": {
-    "commerce-builder@claude-commerce-agents": true
   }
 }
