@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>שרשרת שמות בעברית | שרשרת אמא עם שמות הילדים</title>
-<meta name="description" content="שרשרת אישית עם שמות הילדים בעברית – מתנה מושלמת ליום המשפחה, ליום הולדת ולאמא טרייה. חריטה אישית, אריזת מתנה ומשלוח חינם.">
+<title>שרשרת שם בעברית | מתנה לאמא בחריטה אישית</title>
+<meta name="description" content="שרשרת שם אישית בעברית – אמא, השם שלה או של הילדים. מתנה ליום המשפחה, ליום הולדת ולאמא טרייה. חריטה אישית, אריזת מתנה ומשלוח חינם.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Suez+One&display=swap" rel="stylesheet">
@@ -175,8 +175,8 @@
   <div class="wrap hero">
     <div>
       <span class="eyebrow">מתנה ליום המשפחה, ליום הולדת ולאמא טרייה</span>
-      <h1>כל השמות שהכי חשובים לך – על שרשרת אחת</h1>
-      <p class="lead">שרשרת עדינה עם שמות הילדים, בני הזוג או המשפחה – בעברית, בחריטה אישית, באריזת מתנה מוכנה להענקה.</p>
+      <h1>השם שהכי חשוב לה – בעברית, על שרשרת</h1>
+      <p class="lead">שרשרת שם עדינה בחריטה אישית: "אמא", השם שלה, או שם של אחד הילדים – באריזת מתנה מוכנה להענקה.</p>
       <a class="btn" href="#order">לעיצוב השרשרת שלך ←</a>
       <ul class="badges">
         <li>חריטה אישית בעברית</li>
@@ -187,7 +187,7 @@
     </div>
     <div class="preview" data-color="gold" aria-hidden="true">
       <div class="chain"></div>
-      <div class="pendant" id="heroPendant">נועה <span class="sep">♥</span> איתי</div>
+      <div class="pendant" id="heroPendant">אמא</div>
       <p class="preview-note">הדמיה בלבד</p>
     </div>
   </div>
@@ -199,15 +199,15 @@
         <form class="card" id="orderForm" novalidate>
 
           <fieldset>
-            <legend>כמה שמות?</legend>
+            <legend>כמה שרשראות?</legend>
             <div class="options">
-              <label class="opt"><input type="radio" name="variant" value="single" checked><span><b>שם אחד</b><small data-price="single">₪139</small></span></label>
-              <label class="opt"><input type="radio" name="variant" value="multi"><span><b>2–4 שמות</b><small data-price="multi">₪169</small></span></label>
+              <label class="opt"><input type="radio" name="variant" value="single" checked><span><b>שרשרת אחת</b><small data-price="single">₪139</small></span></label>
+              <label class="opt"><input type="radio" name="variant" value="pair"><span><b>זוג שרשראות</b><small><span data-price="pair">₪229</span> · לאמא ולסבתא</small></span></label>
             </div>
           </fieldset>
 
           <fieldset>
-            <legend>השמות לחריטה <span class="hint">· עד 8 אותיות לשם, בעברית או באנגלית</span></legend>
+            <legend id="namesLegend">השם לחריטה <span class="hint">· עד 8 אותיות, בעברית או באנגלית</span></legend>
             <div class="names" id="names"></div>
             <button type="button" class="link-btn" id="addName" hidden>+ הוספת שם</button>
           </fieldset>
@@ -217,16 +217,15 @@
             <div class="swatches">
               <label class="opt swatch"><input type="radio" name="color" value="gold" checked><span><i style="background:var(--gold)"></i>זהב</span></label>
               <label class="opt swatch"><input type="radio" name="color" value="silver"><span><i style="background:var(--silver)"></i>כסף</span></label>
-              <label class="opt swatch"><input type="radio" name="color" value="rose"><span><i style="background:var(--rose)"></i>רוז גולד</span></label>
             </div>
           </fieldset>
 
           <fieldset>
             <label class="label" for="length">אורך שרשרת</label>
             <select id="length" name="length">
-              <option value="40">40 ס"מ – צמוד לצוואר</option>
-              <option value="45" selected>45 ס"מ – מומלץ</option>
-              <option value="50">50 ס"מ – ארוך</option>
+              <option value="35">35 ס"מ – צמוד לצוואר</option>
+              <option value="40" selected>40 ס"מ – מומלץ</option>
+              <option value="45">45 ס"מ – ארוך</option>
             </select>
           </fieldset>
 
@@ -258,7 +257,7 @@
 
         <div class="preview" data-color="gold" id="livePreview">
           <div class="chain"></div>
-          <div class="pendant" id="livePendant">נועה</div>
+          <div class="pendant" id="livePendant">אמא</div>
           <p class="preview-note">הדמיה של השמות שהקלדתם · התוצאה בפועל לפי עיצוב התליון</p>
         </div>
       </div>
@@ -269,7 +268,7 @@
     <div class="wrap">
       <h2>איך זה עובד?</h2>
       <ol class="steps">
-        <li><b>מעצבים</b><br>בוחרים שמות, גוון ואורך – ורואים הדמיה.</li>
+        <li><b>מעצבים</b><br>בוחרים שם, גוון ואורך – ורואים הדמיה.</li>
         <li><b>אנחנו חורטים</b><br>כל הזמנה נבדקת ונחרטת במיוחד עבורכם.</li>
         <li><b>מקבלים עד הבית</b><br>באריזת מתנה, עם מספר מעקב במייל.</li>
       </ol>
@@ -327,8 +326,8 @@
 (function () {
   const S = window.STORE || {};
   const DEMO = !S.appsScriptUrl;
-  const MAX = { single: 1, multi: 4 };
-  const MIN = { single: 1, multi: 2 };
+  const MAX = { single: 1, pair: 2 };
+  const MIN = { single: 1, pair: 2 };
   const NAME_RE = /^[א-תa-zA-Z'"׳״\- ]+$/;
 
   const $ = s => document.querySelector(s);
@@ -343,7 +342,7 @@
   $$('[data-mail]').forEach(el => { el.href = 'mailto:' + (S.email || ''); if (!el.textContent) el.textContent = S.email || ''; });
   const waLink = 'https://wa.me/' + (S.whatsapp || '') + '?text=' + encodeURIComponent('היי, יש לי שאלה לגבי שרשרת שמות');
   $$('[data-wa]').forEach(el => { el.href = waLink; el.target = '_blank'; el.rel = 'noopener'; });
-  if (S.prices) { $('[data-price="single"]').textContent = shekel(S.prices.single); $('[data-price="multi"]').textContent = shekel(S.prices.multi); }
+  if (S.prices) { $('[data-price="single"]').textContent = shekel(S.prices.single); $('[data-price="pair"]').textContent = shekel(S.prices.pair); }
   if (DEMO) $('#demoBanner').classList.add('show');
 
   // ---- names inputs
@@ -373,7 +372,8 @@
     while (rows.length > MAX[v]) namesBox.lastChild.remove();
     Array.from(rows).forEach(r => r.querySelector('.icon-btn').hidden = rows.length <= MIN[v]);
     addBtn.hidden = rows.length >= MAX[v];
-    namesBox.querySelectorAll('input').forEach((inp, i) => inp.placeholder = v === 'single' ? 'שם' : 'שם ' + (i + 1));
+    namesBox.querySelectorAll('input').forEach((inp, i) => inp.placeholder = v === 'single' ? 'השם לחריטה, למשל: אמא' : 'שם לשרשרת ' + (i + 1));
+    $('#namesLegend').firstChild.textContent = v === 'single' ? 'השם לחריטה ' : 'שם לכל שרשרת ';
   }
 
   addBtn.addEventListener('click', () => { namesBox.appendChild(nameInput('')); syncNames(); namesBox.lastChild.querySelector('input').focus(); });
@@ -389,7 +389,7 @@
     const pendant = $('#livePendant');
     const list = names();
     pendant.textContent = '';
-    (list.length ? list : [v === 'single' ? 'נועה' : 'נועה', 'איתי'].slice(0, v === 'single' ? 1 : 2)).forEach((n, i) => {
+    (list.length ? list : ['אמא', 'סבתא'].slice(0, MIN[v])).forEach((n, i) => {
       if (i) { const s = document.createElement('span'); s.className = 'sep'; s.textContent = '♥'; pendant.appendChild(s); }
       pendant.appendChild(document.createTextNode(n));
     });
@@ -404,7 +404,7 @@
   function validate() {
     const v = variant();
     const list = names();
-    if (list.length < MIN[v]) return v === 'single' ? 'נא להקליד את השם לחריטה' : 'נא להקליד לפחות 2 שמות';
+    if (list.length < MIN[v]) return v === 'single' ? 'נא להקליד את השם לחריטה' : 'נא להקליד שם לכל אחת מהשרשראות';
     for (const n of list) if (!NAME_RE.test(n)) return 'השם "' + n + '" מכיל תווים שלא ניתן לחרוט. אפשר אותיות בעברית או באנגלית בלבד.';
     const req = [['customerName', 'שם מלא'], ['phone', 'טלפון'], ['email', 'מייל'], ['city', 'עיר'], ['address', 'כתובת']];
     for (const [id, label] of req) if (!$('#' + id).value.trim()) { $('#' + id).focus(); return 'נא למלא ' + label; }

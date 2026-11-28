@@ -16,12 +16,12 @@ const CONFIG = {
   SUPPLIER_EMAIL: 'supplier@example.com',     // the jeweler's email: gets orders to make and ship
   AUTO_SEND_TO_SUPPLIER: true,                // false = only you get the order, you forward it yourself
   SEND_CUSTOMER_CONFIRMATION: true,           // send the customer an email with their order details
-  DELIVERY_TEXT: '7–10 ימי עסקים',            // must match deliveryText in site/config.js
+  DELIVERY_TEXT: '5–7 שבועות',                // must match deliveryText in site/config.js
   WHATSAPP: '9725XXXXXXXX',                   // for the customer email; same as in site/config.js
   SHEET_NAME: 'הזמנות',
   // Must match the prices of your payment links. The amount is charged by the payment link;
   // this is only what gets written in the sheet.
-  PRICES: { single: 139, multi: 169 },
+  PRICES: { single: 139, pair: 229 },
 };
 
 const STATUS_PENDING = 'ממתין לתשלום';
@@ -34,9 +34,9 @@ const HEADERS = [
 ];
 const COL = Object.fromEntries(HEADERS.map((h, i) => [h, i + 1]));
 
-const VARIANT_LABEL = { single: 'שם אחד', multi: '2–4 שמות' };
-const COLOR_LABEL = { gold: 'זהב', silver: 'כסף', rose: 'רוז גולד' };
-const LENGTHS = ['40', '45', '50'];
+const VARIANT_LABEL = { single: 'שרשרת אחת', pair: 'זוג שרשראות (שם אחד לכל שרשרת)' };
+const COLOR_LABEL = { gold: 'זהב', silver: 'כסף' };
+const LENGTHS = ['35', '40', '45'];
 
 // ---------------------------------------------------------------- web endpoint
 
@@ -62,12 +62,12 @@ function doGet() {
 // ---------------------------------------------------------------- actions
 
 function createOrder_(d) {
-  const variant = d.variant === 'multi' ? 'multi' : 'single';
+  const variant = d.variant === 'pair' ? 'pair' : 'single';
   const names = (Array.isArray(d.names) ? d.names : [])
     .map(n => clean_(n, 12))
     .filter(Boolean);
-  const maxNames = variant === 'multi' ? 4 : 1;
-  const minNames = variant === 'multi' ? 2 : 1;
+  const maxNames = variant === 'pair' ? 2 : 1;
+  const minNames = maxNames;
   if (names.length < minNames || names.length > maxNames) {
     throw new Error('מספר השמות לא תואם לסוג השרשרת');
   }
@@ -235,7 +235,7 @@ function setup() {
 /** Optional: run from the editor to check the emails look right (sends to OWNER_EMAIL only). */
 function sendTestEmail() {
   const o = {
-    id: 'TEST', variant: '2–4 שמות', names: 'נועה · איתי', color: 'זהב', length: '45 ס"מ',
+    id: 'TEST', variant: 'זוג שרשראות (שם אחד לכל שרשרת)', names: 'אמא · סבתא', color: 'זהב', length: '40 ס"מ',
     card: 'אמא, אוהבים אותך!', name: 'ישראלה ישראלי', phone: '050-0000000', email: CONFIG.OWNER_EMAIL,
     city: 'תל אביב', address: 'הרצל 1', zip: '',
   };
