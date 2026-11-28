@@ -8,12 +8,117 @@
       "skillPath": "skills/dropshipping/SKILL.md",
       "computedHash": "2f1f3efd3ddd397bf6fa340c2f35710a018fdf62e5a616bcc5250d6c5c94e519"
     },
+    "abandoned-cart-recovery": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/abandoned-cart-recovery/SKILL.md",
+      "computedHash": "5a0098a81d81a33c9e8c2b9f3e21a06acfe7e736c5335be13c4ade9c558e1adc"
+    },
+    "ad-campaign-scaling": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/ad-campaign-scaling/SKILL.md",
+      "computedHash": "1f00a294efef163e6babe52ca9db9ae669aa79fdec8f29be3b92e266446a0146"
+    },
     "add-voiceover": {
       "source": "jamdotdev/jam-plugin",
       "commit": "1e3c3dd7827ba8c7da20ca4a9c4c72c22eca0d54",
       "sourceType": "github",
       "skillPath": "skills/add-voiceover/SKILL.md",
       "computedHash": "db447ad84467f44ba23c5d514da1380f089e2e1eb3e6c41167d7282e61905ebe"
+    },
+    "ai-ad-factory": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/ai-ad-factory/SKILL.md",
+      "computedHash": "e371d5347b9941898ea8ef5d1b96e885f86f05fd611d522dd3db74e572abe09d"
+    },
+    "ai-ugc-factory": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/ai-ugc-factory/SKILL.md",
+      "computedHash": "e4d48335bb3aa0638df2510a327a4c86560d557fc2e5b4ead1ee47064449749f"
+    },
+    "chargeback-fighter": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/chargeback-fighter/SKILL.md",
+      "computedHash": "4a0eb38715a24b7f24de2670840c1e99766d1b881b8ffe6335b2f5a34eea132b"
+    },
+    "checkout-debug": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/checkout-debug/SKILL.md",
+      "computedHash": "7784b5576e578986f4f4cd64303f6a126c847b09e5a9094c45ad5ec00034761d"
+    },
+    "clone-any-store": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/clone-any-store/SKILL.md",
+      "computedHash": "5779305e91a2453c8204a16ee9ec7924eca2c99de7d8c59890d908b3d838b549"
+    },
+    "increase-average-order-value": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/increase-average-order-value/SKILL.md",
+      "computedHash": "3652d68095f036ff82af0439cdfce6888e11d6aadf9d254fe38d47be4c4d1598"
+    },
+    "payment-network": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/payment-network/SKILL.md",
+      "computedHash": "3098a96f689cdc35bf867f4f8f46e5d3258419c6904536e277e828673915f776"
+    },
+    "reddit-customer-research": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/reddit-customer-research/SKILL.md",
+      "computedHash": "8708a2f8780c0e58ac58be1a18b424e193852fb2192b28df5fe1e787b807bea2"
+    },
+    "reverse-engineer-any-store": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/reverse-engineer-any-store/SKILL.md",
+      "computedHash": "a7446de2dbb27484e2e43f44abaab19edfc008aad1aadff2e01216b768221ec9"
+    },
+    "sourcing-and-fulfillment": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/sourcing-and-fulfillment/SKILL.md",
+      "computedHash": "4c73a4fef7b4abba9b8f44a4404b91592706c9e4020ad48221bfebd6edf21df8"
+    },
+    "support-automation": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/support-automation/SKILL.md",
+      "computedHash": "ca6f777d6e273f1c117f55c8be0de2d5bf6520f915d8c29becc86a9e474cf803"
+    },
+    "viral-hook-formats": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/viral-hook-formats/SKILL.md",
+      "computedHash": "ec3801eb23f88910817ff16eb0e3a575490e41a4161dc8489f40d26f3a922366"
+    },
+    "winning-product-research": {
+      "source": "branded-dropshipping/skills",
+      "commit": "ba641ba8a8a077a4a8f20246838e6c3c5931b0c9",
+      "sourceType": "github",
+      "skillPath": "skills/winning-product-research/SKILL.md",
+      "computedHash": "34340837a6b7ed961600ef406954a232c1651b9e6486134f5f95afbd1936462e"
     }
   }
 }
